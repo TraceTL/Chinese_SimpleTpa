@@ -1,0 +1,219 @@
+#  ____    _                       _          _____
+# / ___|  (_)  _ __ ___    _ __   | |   ___  |_   _|  _ __     __ _
+# \___ \  | | | '_ ` _ \  | '_ \  | |  / _ \   | |   | '_ \   / _` |
+#  ___) | | | | | | | | | | |_) | | | |  __/   | |   | |_) | | (_| |
+# |____/  |_| |_| |_| |_| | .__/  |_|  \___|   |_|   | .__/   \__,_|
+#                         |_|                        |_|
+# @Tian_Luo_ 汉化
+# 插件版本：6.6
+
+# 可以使用的变量: %time% | %player% | %option%
+
+
+# This options will support all plugins that use teleport stuff
+#这项设置将记录所有插件的传送功能
+# !!!!!!!!!!!!!!!!
+# If you want the plugin to log the previus teleport locations for the /back command from other plugins -> set this to true
+#如果你想让SimpleTpa记录其他插件传送玩家时的位置, 请设置为 true (如果没有其他传送插件请设置为false，插件默认为false)
+enable-teleport-logging: false
+# !!!!!!!!!!!!!!!!
+
+#If you set it to true, you will disable the prefix
+#是否关闭tp时插件的前缀名
+#Make sure to restart the server in order to apply it
+#保存后请重启服务器以生效更改的选项
+disable-prefix: false
+#前缀名
+prefix: "&c[&6SimpleTpa&c]"
+
+#Messages:
+#文本设置:
+
+# TO DISABLE A MESSAGE - SET IT TO - NONE
+# 如想关闭文本提示，填写none
+
+# EXAMPLE:
+# 举个例子:
+# Console-Isnt-Player: "none"
+Console-Isnt-Player: "&c后台无法使用!"
+Disabled-World-Message: "&6无法在这个世界发送传送请求!"
+Teleport-Message: "&f您将在 &e%time% &f秒后传送至目标附近!"
+Teleport-Message-Back-To-Player: "&f您接受了玩家的传送请求!"
+Player-Is-Null: "&c该玩家不在线!"
+Player-Doesnt-Have-Back-Point: "&c无法返回到上个位置!"
+Player-Doesnt-Have-Back-Point-1: "&c无法返回到上个位置!"
+Cooldown-Message: "&c冷却中! 请等待 &e%time% &c秒后再使用!"
+Death-Message: "&f输入 &9/back &f返回到死亡点!"
+Teleport-Message-Back-To-Sender-TPHEREALL: "&f已向所有在线玩家发送了传送请求!"
+No-Permission-Message: "&c您没有权限!"
+TpaToggle-Deactivated-Player-2: "&d%player% &c暂时关闭了您的任何传送请求!"
+TpaToggle-Activated-Player-2: "&d%player% &a现在可以收到您的传送请求了!"
+TpaToggle-Deactivated-Player: "&f您永久关闭了 &d%player% &f发出的传送请求!"
+TpaToggle-Activated-Player: "&f您现在可以收到 &d%player% &f发出的传送请求了!"
+TpaToggle-Deactivated: "&f您现在无法接收到任何传送请求!"
+TpaToggle-Activated: "&f您现在可以接收到玩家的传送请求了!"
+TpaToggled-Player-Message: "&c您无法向他发起传送请求, 该玩家关闭了传送请求!"
+Player-Is-Player: "&c您无法向自己发送传送请求!"
+Already-A-TP-Request: "&f您已向该玩家发送过传送请求了, 输入 &9/tpcancel <玩家ID> &f以取消传送!"
+Tpa-Usage-Message: "&f请输入 &9/tpa <玩家ID> &f发送传送请求!"
+Timed-Out-Message: "&c您发送的传送请求已超时!"
+Sending-Teleport-Request: "&f已向 &d%player% &f发送传送请求, 输入 &9/tpcancel <玩家ID> &f以取消传送!"
+Accept-Message: "&f输入 &a/tpaccept &f以接受该玩家的传送请求!"
+Deny-Message: "&f输入 &c/tpdeny &f以拒绝该玩家的传送请求!"
+Sent-Request-On-You: "&d%player% &f向您发送了一个传送请求!"
+Timed-Out-Here-Message: "&6您发送的传送邀请已超时!"
+Sending-Teleport-Here-Request: "&f已向 &d%player% &f发出传送邀请, 输入 &9/tpcancel <玩家ID> &f以取消邀请!"
+Sent-Here-Request-On-You: "&d%player% &f想将您传送到他的位置!"
+Already-A-TPHere-Request: "&f已向该玩家发出过传送邀请了, 输入 &9/tpcancel <玩家ID> &f以取消邀请!"
+Tpa-Here-Usage-Message: "&f请输入 &9/tpahere <玩家ID> &f发出传送邀请!"
+No-Teleport-Requests: "&c没有玩家向您发送传送请求!"
+Invalid-Player: "&c向您发送传送请求的玩家已离开服务器!"
+Teleport-Message-Back-To-Sender: "&d%player% &a接受了您的传送请求!"
+Teleported-Message: "&f传送中..."
+Move-Cancel-Message: "&c传送过程中请勿移动, 已取消此次传送请求!"
+Rejected-Sender: "&c玩家拒绝了您的传送请求!"
+Rejected-Message: "&f您拒绝了此次传送请求!"
+Player-Is-In-Disabled-World: "&c该玩家所处世界无法发送传送请求!"
+Tpcancel-Usage-Message: "&f请输入 &9/tpcancel <玩家ID> &f以取消传送请求!"
+Error-Cancelling-Request: "&c您无法取消这次的传送请求!"
+Request-Cancelled: "&f已取消传送请求!"
+Death-Message-Coords: "&f死亡地点: &d%coords%"
+Time-Left: "&f您有 &e%seconds% &f秒来接受或拒绝传送请求!"
+Damaged-Cancel-Message: "&c传送过程中受到伤害, 已取消此次传送请求!"
+Different-Gamemode: "&c观察者模式下无法使用传送指令!"
+World-Doesnt-Exists-Or-Unloaded: "&c世界不存在, 无法传送!"
+## BUTTONS
+## 选项
+# 这里你可以查看颜色代码 https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/ChatColor.html
+
+# PARTICLES AND SOUNDS
+# 粒子效果和音效
+
+# Here you can change the sound volume or the pitch. These are the recommended values
+# 这里你可以调整音效的音量和音调。以下为推荐的数值
+
+# Select the name for the sound from here: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+# 从这里查看音效名称：https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+
+# 传送时的音效
+Sound-Name: "ENTITY_EXPERIENCE_ORB_PICKUP"
+sound-volume: 3.0
+sound-pitch: 0.533
+
+# Select the name for the particle from here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+# 这里查看粒子效果的名称: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+
+# 传送时的粒子
+Particle-Name: "EXPLOSION_NORMAL"
+
+# Accept Button Properties
+# 接受按钮的设置
+Accept-Button: "              接受"
+Accept-Button-Color: "GREEN"
+Accept-Button-Set-Bold: false
+Accept-Button-Description: "&f点击 &a接受 &f传送请求!"
+
+# Middle Button Properties
+# 聊天框接受/拒绝分割线设置
+Middle-Button: " | "
+Middle-Button-Color: "GRAY"
+Middle-Button-Set-Bold: false
+Middle-Button-Description: "&7 <- 请选择 -> "
+
+# Deny Button Properties
+# 聊天框拒绝按钮设置
+Deny-Button: "拒绝"
+Deny-Button-Color: "RED"
+Deny-Button-Set-Bold: false
+Deny-Button-Description: "&f点击 &c拒绝 &f传送请求!"
+
+# If you want to disable simpletpa for some worlds, then you can add them by adding - 'NameOfTheWorld'
+# 如果你想要在某些世界中禁用 SimpleTPA 插件，可以通过添加 - '世界的名称' 来实现
+
+#Disabled Worlds:
+#禁用的世界:
+disabled-worlds:
+  - 'disabledworld'
+
+# If you set anything to true, you will disable it.
+# 如果你将任何项设置为 true，将禁用该功能。（ true 为开启， false 为关闭）
+# B A C K    S E T T I N G S
+# 返回死亡点的设置
+
+# If you want to disable the back command, then set this to true
+# 如果你想要禁用返回死亡点指令，则将其设置为 true
+disable-back-command: false
+
+# If you want to disable the death coords message, then set this to true
+# 如果你想要禁用死亡坐标的消息记录，则将其设置为 true
+disable-coords-message: false
+
+# If you want to disable saving the death location, then set this to true
+# 如果你想要禁用返回到死亡点，则将其设置为 true
+disable-back-on-death: false
+
+# If you want to disable saving the TP Locations such as TPA, TPAHERE, then set this to true
+# 如果你想要禁用返回到传送前的位置，则将其设置为 true
+disable-back-on-tp: false
+
+#Booleans
+#其他设置
+
+#  If you want to disable checking for gamemode if equals to spectator, then set this to true
+#  如果你想要禁用检查玩家模式是否为观察者模式，则将其设置为 true
+disable-gamemode-check: false
+#  If you want to disable saving the accept or deny buttons, then set this to true
+#  如果你想要禁用聊天框的接受或拒绝按钮，则将其设置为 true
+disable-accept-deny-buttons: false
+#  If you want to disable saving the particles, then set this to true
+#  如果你想要禁用传送时的粒子效果，则将其设置为 true
+disable-particles: false
+#  If you want to disable saving the move system, then set this to true
+#  如果你想要禁用传送时如果移动则打断传送，则将其设置为 true（默认为false）
+disable-move-system: true
+#  If you want to disable sounds from the plugin, then set this to true
+#  如果你想要禁用传送时的声音，则将其设置为 true
+disable-sound: false
+
+# If you want to disable interdimensional travel(only allowed to use the plugin in the same world with other player), then set this to true
+# 如果你想要禁用跨维度传送（仅允许在同一世界中与其他玩家使用插件），则将其设置为 true
+disable-interdimensional-travel: false
+# If you want to disable the invincibility after teleporting, then set this to true
+# 如果你想要禁用传送后短时间无敌状态，则将其设置为 true
+disable-invincibility: false
+# If you want to disable logging /back locations from quitting the server, then set this to true
+# 如果你想要禁用记录进入/退出服务器时的位置 /back 位置，则将其设置为 true
+disable-back-on-quit: false
+
+# Everything works with SECONDS
+# 所有时间均为秒（仅能填写整数）
+#Integers
+#无敌时间
+invincibility-seconds: 3
+#This will keep the teleport request alive for X seconds
+#请求时间
+keep-alive: 60
+#This will delay the teleportation for X seconds
+#延迟多少秒后传送到上一个位置
+delay-back-command: 3
+#延迟多少秒后进行传送
+delay-teleportation: 3
+#Cooldowns
+#冷却时间
+back-cooldown: 10
+tpa-cooldown: 10
+tpahere-cooldown: 10
+tpahereall-cooldown: 10
+#To set a custom cooldown, you need to add a permission : simpletpa.cooldown.Y.X where Y is the command and  X are the seconds.
+#若要自定义冷却时间, 请为玩家添加权限: simpletpa.cooldown.Y.X
+
+#The options for commands are: tpa | tpahere | back | tpahereall
+#命令的选项有：tpa | tpahere | back | tpahereall
+
+#Example: simpletpa.cooldown.tpa.300 | simpletpa.cooldown.tpahere.300 | simpletpa.cooldown.tpahereall.300 | simpletpa.cooldown.back.300
+#示例:simpletpa.cooldown.tpa.300 | simpletpa.cooldown.tpahere.300 | simpletpa.cooldown.tpahereall.300 | simpletpa.cooldown.back.300
+
+#This will set the cooldown for tpa/ tpahere/ tpahereall / back to 300 seconds
+#这将把 tpa/tpahere/tpahereall/back 的冷却时间设置为 300 秒
+
+
